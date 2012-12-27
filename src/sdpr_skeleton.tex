@@ -1,0 +1,265 @@
+\documentclass[unicode]{llncs}
+
+
+%% { Packages
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage[hmargin=2.5cm,vmargin=2.5cm]{geometry}
+\usepackage[english]{babel}
+\usepackage[babel]{csquotes}
+\usepackage{url}
+\usepackage{color}
+\usepackage[colorlinks=true,xetex]{hyperref}
+\usepackage[colorinlistoftodos, textwidth=4cm, shadow]{todonotes}
+\usepackage{minted}
+\usepackage{import}
+\usepackage{amsmath,unicode-math}
+\usepackage{chngpage}
+%% }
+
+%% { Colors
+\definecolor{Grey10}{rgb}{0.1, 0.1, 0.1}
+\definecolor{Grey30}{rgb}{0.3, 0.3, 0.3}
+\definecolor{Grey50}{rgb}{0.5, 0.5, 0.5}
+\definecolor{Grey70}{rgb}{0.7, 0.7, 0.7}
+\definecolor{Grey98}{rgb}{0.98, 0.98, 0.98}
+\definecolor{Red}{rgb}{1, 0, 0}
+\definecolor{Blue}{rgb}{0, 0, 1}
+\definecolor{Yellow}{rgb}{0.9, 0.8, 0}
+\definecolor{Purple}{rgb}{0.74, 0.2, 1}
+%% }
+
+%% { Fonts
+\defaultfontfeatures{Ligatures=TeX} % New fonts behave like in LaTeX
+
+\setromanfont[Mapping=tex-text]{DejaVu Serif} % Roman font
+\setsansfont[Mapping=tex-text]{DejaVu Sans}  % Sans font
+\setmathfont{XITS}
+%% }
+
+%% { Custom commands
+%%% { To-do commands
+\newcommand{\todoinline}[1]{\todo[nolist, inline]{#1}}
+\newcommand{\todoaside}[1]{\todo[nolist]{#1}}
+
+\newcommand{\codefromfile}[2]{%
+  \inputminted[linenos=true, mathescape, frame=single, framesep=2mm]{#1}{#2}%
+}
+%%% }
+%%% { Linking commands
+\newcommand{\link}[2]{\href{#1}{#2}}
+%%% }
+%%% { Inclusion / Import commands
+% Include an SVG file converting the file into a pdf and including it
+% Parameters:
+%   1- the svg file path (absolute or relative to the SRC_PTH)
+%   2- the image scale (from 0 to 1)
+% Requirements:
+%   - librsvg
+\newcommand{\includesvg}[2]{%
+  \immediate\write18{rsvg-convert -f pdf -o #1.pdf #1.svg}%
+  \includegraphics[scale=#2]{#1.pdf}
+}
+%%% }
+%%% { Cross-referencing commands
+%%%% { Section referencing
+\newcommand{\labelsec}[1]{\label{sec:#1}}
+\newcommand{\xs}[1]{Section~\ref{sec:#1}}
+\newcommand{\xsp}[1]{Section~\ref{sec:#1} on page~\pageref{sec:#1}}
+%%%% }
+%%%% { Subsection referencing
+\newcommand{\labelssec}[1]{\label{ssec:#1}}
+\newcommand{\xss}[1]{Subsection~\ref{ssec:#1}}
+\newcommand{\xssp}[1]{Subsection~\ref{ssec:#1} on page~\pageref{ssec:#1}}
+%%%% }
+%%%% { Figure referencing
+\newcommand{\labelfig}[1]{\label{fig:#1}}
+\newcommand{\xf}[1]{Figure~\ref{fig:#1}}
+\newcommand{\xfp}[1]{Figure~\ref{fig:#1} on page~\pageref{fig:#1}}
+%%%% }
+%%%% { Table referencing
+\newcommand{\labeltab}[1]{\label{tab:#1}}
+\newcommand{\xt}[1]{Table~\ref{tab:#1}}
+\newcommand{\xtp}[1]{Table~\ref{tab:#1} on page~\pageref{tab:#1}}
+%%%% }
+%%% }
+%% }
+
+
+%% { Aliases
+%%% { Contact informations
+\newcommand{\authorname}{Alessandro Molari}
+\newcommand{\authoremail}{\email{molari.alessandro@gmail.com}}
+\newcommand{\societyname}{Nextreamlabs}
+\newcommand{\addresscity}{City}
+\newcommand{\addresspostalcode}{PostalCode}
+\newcommand{\addressstreet}{Street}
+\newcommand{\addresscountry}{Country}
+\newcommand{\addressfull}{%
+  \addressstreet\\\addresscity, \addresspostalcode\\\addresscountry%
+}
+%%% }
+%% }
+
+
+\author{\authorname}
+\title{Software Engineering Process Report Template}
+\institute{\societyname\\\addressfull\\\authoremail}
+
+\begin{document}
+
+  \maketitle
+
+  \begin{abstract}
+    \todoinline{Replace with the document abstract}
+  \end{abstract}
+
+  %%% =80 chars================================================================
+  \section{Introduction}
+  \labelsec{Intro}
+
+    \todoinline{Replace with the introduction}
+
+  %%% =80 chars================================================================
+  \section{Vision}
+  \labelsec{Vision}
+
+    \todoinline{Replace with the vision}
+
+  %%% =80 chars================================================================
+  \section{Goals}
+  \labelsec{Goals}
+
+    \todoinline{Replace with the goals}
+
+  %%% =80 chars================================================================
+  \section{Requirements}
+  \labelsec{Requirements}
+
+    \todoinline{Replace with the requirements}
+
+  %%% =80 chars================================================================
+  \section{Requirement analysis}
+  \labelsec{ReqAnalysis}
+
+    %%% =80 chars==============================================================
+    \subsection{Use cases}
+    \labelssec{UseCases}
+
+      \todoinline{Replace with the use cases}
+
+    %%% =80 chars==============================================================
+    \subsection{Scenarios}
+    \labelssec{Scenarios}
+
+      \todoinline{Replace with the scenarios}
+
+    %%% =80 chars==============================================================
+    \subsection{ (Domain) model }
+    \labelssec{DomainModel}
+
+      \todoinline{Replace with the domain model}
+
+    %%% =80 chars==============================================================
+    \subsection{Test plan}
+    \labelssec{TestPlan}
+
+      \todoinline{Replace with the test plan}
+
+  %%% =80 chars================================================================
+  \section{Problem analysis}
+  \labelsec{ProblemAnalysis}
+
+    \todoinline{Replace with the problem analysis}
+
+    %%% =80 chars==============================================================
+    \subsection{Logic architecture}
+
+      \todoinline{Replace with the logic architecture}
+
+    %%% =80 chars==============================================================
+    \subsection{Abstraction gap}
+
+      \todoinline{Replace with the abstraction gap}
+
+    %%% =80 chars==============================================================
+    \subsection{Risk analysis}
+
+      \todoinline{Replace with the risk analysis}
+
+  %%% =80 chars================================================================
+  \section{Work plan}
+  \labelsec{WorkPlan}
+
+    \todoinline{Replace with the work plan}
+
+  %%% =80 chars================================================================
+  \section{Project}
+  \labelsec{Project}
+
+    \todoinline{Replace with the project}
+
+    %%% =80 chars==============================================================
+    \subsection{Structure}
+
+      \todoinline{Replace with the project structure}
+
+    %%% =80 chars==============================================================
+    \subsection{Interaction}
+
+      \todoinline{Replace with the project interaction}
+
+    %%% =80 chars==============================================================
+    \subsection{Behavior}
+
+      \todoinline{Replace with the project behaviour}
+
+  %%% =80 chars================================================================
+  \section{Implementation}
+  \labelsec{Implementation}
+
+      \todoinline{Replace with the project implementation}
+
+  %%% =80 chars================================================================
+  \section{Testing}
+  \labelsec{Testing}
+
+    \todoinline{Replace with the testing}
+
+  %%% =80 chars================================================================
+  \section{Deployment}
+  \labelsec{Deployment}
+
+    \todoinline{Replace with the deployment}
+
+  %%% =80 chars================================================================
+  \section{Maintenance}
+  \labelsec{Maintenance}
+
+    \todoinline{Replace with the maintenance}
+
+  %%% =80 chars================================================================
+  \section{Information about the author}
+  \labelsec{Author}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[scale=0.7]{resources/authorphoto.png}
+      \caption{Photo of the author \authorname}
+    \end{figure}
+
+  %%% =80 chars================================================================
+  \appendix
+
+  % The list of the used references
+  \clearpage
+  \bibliographystyle{abbrv}
+  \bibliography{biblio}
+
+  % The Table of Contents
+  \clearpage
+  \setcounter{tocdepth}{4}
+  \tableofcontents
+\end{document}
+
+% vim: filetype=tex:
